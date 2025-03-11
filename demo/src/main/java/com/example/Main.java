@@ -5,9 +5,163 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Basic Concepts of Java Programming");
         Main mainInstance = new Main();
+        mainInstance.guessNumber();
+        mainInstance.printName("Preemal");
+        mainInstance.calculateSum(10, 20);
+        mainInstance.exceptionHandling();
+        mainInstance.breakAndContinue();
+        mainInstance.loopConcepts();
+        mainInstance.switchMethod();
+        mainInstance.logicalOperators();
         mainInstance.test();
+        mainInstance.loopProject();
+    }
+
+    public void guessNumber(){
+        Scanner sc = new Scanner(System.in);
+        int secretNumber = (int)(Math.random()*100);
+        int userNumber = 0;
+        do{
+            System.out.println("Guess the number: ");
+            userNumber = sc.nextInt();
+            if(userNumber == secretNumber){
+                System.out.println("You have guessed the correct number");
+                break;
+            } else if(userNumber < secretNumber){
+                System.out.println("Guess a higher number");
+            } else {
+                System.out.println("Guess a lower number");
+            }
+        } while(userNumber != secretNumber);
+        System.out.println("The secret number was: " + secretNumber);
+        //sc.close();
+
+    }
+
+    public void printName(String name){
+        System.out.println("Hello " + name);
+    }
+
+    public void calculateSum(int a, int b){
+        int sum = a+b;
+        System.out.println("The sum of " + a + " and " + b + " is " + sum);
+    }
+
+    public void exceptionHandling(){
+        try {
+            int[] marks = {80,82,85};
+            System.out.println(marks[5]);
+        } catch (Exception e) {
+            System.out.println("An error occurred");
+            e.printStackTrace();
+        } finally {
+            System.out.println("The 'try catch' is finished");
+        }
+    }
+
+    public void breakAndContinue(){
+        System.out.println("Using For Loop: Break");
+        for(int i=0; i<10; i++){
+            if(i == 5){
+                break;
+            }
+            System.out.println(i);
+        }
+        System.out.println("Using For Loop: Continue");
+        for(int j=0; j<10; j++){
+            if(j == 5){
+                continue;
+            }
+            System.out.println(j);
+        }
+
+        // Example using While Loop
+        System.out.println("Using While Loop");
+        int a = 0;
+        while(true){
+            if(a==3){
+                a++;
+                continue;
+            }
+            System.out.println(a);
+            a++;
+            if(a>5){
+                break;
+            }
+        }
+    }
+    public void loopProject(){
+        Scanner sc = new Scanner(System.in);
+        int num = 0;
+        do {
+            System.out.println("Enter a number: ");
+            num = sc.nextInt();
+            System.out.println("The number entered is: " + num);
+        } while(num >= 0);
+        System.out.println("You have entered a negative number");
+        //sc.close();
+    }
+
+    public void loopConcepts(){
+        // For Loop
+        System.out.println("Print values from 0 to 5");
+        for(int i=0; i<6; i++){
+            System.out.println(i);
+        }
+        System.out.println("Print values from 5 to 1");
+        for(int j=5; j>0; j--){ 
+            System.out.println(j);
+        }
+        
+        //While Loop
+        int a = 10;
+        while(a >= 0){
+            System.out.println(a);
+            a--;
+        }
+
+        //Do While Loop
+        int b = 5;
+        do {
+            System.out.println(b);
+            b--;
+        } while (b >= 0);
+
+    }
+
+    public void switchMethod() {
+        String fruits = "Cherry";
+        switch(fruits){
+            case "Apple":
+                System.out.println("Apple is red");
+                break;
+            case "Mango":
+                System.out.println("Mango is yellow");
+                break;  
+            default:
+                System.out.println("No fruits available");
+        }
+    }
+
+    public void logicalOperators(){
+       int a= 10;
+       int b= 20;
+       //logical AND
+       if(a<50 && b<50){
+              System.out.println("Both are less than 50");
+       }
+         //logical OR
+         if(a<50 || b>10){
+            System.out.println("Either of them is true");
+         }
+         //logical NOT
+         if(!(a<50)){
+            System.out.println("a is not less than 50");
+         } else {
+            System.out.println("a is less than 50");
+         }  
     }
 
     public void test() {
@@ -105,7 +259,7 @@ public class Main {
         System.out.println("Enter your age: ");
         int userAge = sc.nextInt();
         System.out.println(userName+ " is " + userAge + " years old");
-        sc.close(); 
+        //sc.close(); 
 
         // Conditional Statements
         boolean isAdult = true;
