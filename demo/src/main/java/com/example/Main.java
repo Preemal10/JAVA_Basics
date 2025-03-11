@@ -6,20 +6,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Basic Concepts of Java Programming");
-        Main mainInstance = new Main();
-        mainInstance.guessNumber();
-        mainInstance.printName("Preemal");
-        mainInstance.calculateSum(10, 20);
-        mainInstance.exceptionHandling();
-        mainInstance.breakAndContinue();
-        mainInstance.loopConcepts();
-        mainInstance.switchMethod();
-        mainInstance.logicalOperators();
-        mainInstance.test();
-        mainInstance.loopProject();
+        //Main mainInstance = new Main();
+        //mainInstance.guessNumber();
+        guessNumber();
+        printName("Preemal");
+        calculateSum(10, 20);
+        exceptionHandling();
+        breakAndContinue();
+        loopConcepts();
+        switchMethod();
+        logicalOperators();
+        test();
+        loopProject();
     }
 
-    public void guessNumber(){
+    public static void guessNumber(){
         Scanner sc = new Scanner(System.in);
         int secretNumber = (int)(Math.random()*100);
         int userNumber = 0;
@@ -37,19 +38,18 @@ public class Main {
         } while(userNumber != secretNumber);
         System.out.println("The secret number was: " + secretNumber);
         //sc.close();
-
     }
 
-    public void printName(String name){
+    public static void printName(String name){
         System.out.println("Hello " + name);
     }
 
-    public void calculateSum(int a, int b){
+    public static void calculateSum(int a, int b){
         int sum = a+b;
         System.out.println("The sum of " + a + " and " + b + " is " + sum);
     }
 
-    public void exceptionHandling(){
+    public static void exceptionHandling(){
         try {
             int[] marks = {80,82,85};
             System.out.println(marks[5]);
@@ -61,7 +61,7 @@ public class Main {
         }
     }
 
-    public void breakAndContinue(){
+    public static void breakAndContinue(){
         System.out.println("Using For Loop: Break");
         for(int i=0; i<10; i++){
             if(i == 5){
@@ -92,7 +92,8 @@ public class Main {
             }
         }
     }
-    public void loopProject(){
+
+    public static void loopProject(){
         Scanner sc = new Scanner(System.in);
         int num = 0;
         do {
@@ -104,7 +105,7 @@ public class Main {
         //sc.close();
     }
 
-    public void loopConcepts(){
+    public static void loopConcepts(){
         // For Loop
         System.out.println("Print values from 0 to 5");
         for(int i=0; i<6; i++){
@@ -128,10 +129,9 @@ public class Main {
             System.out.println(b);
             b--;
         } while (b >= 0);
-
     }
 
-    public void switchMethod() {
+    public static void switchMethod() {
         String fruits = "Cherry";
         switch(fruits){
             case "Apple":
@@ -145,7 +145,7 @@ public class Main {
         }
     }
 
-    public void logicalOperators(){
+    public static void logicalOperators(){
        int a= 10;
        int b= 20;
        //logical AND
@@ -164,7 +164,7 @@ public class Main {
          }  
     }
 
-    public void test() {
+    public static void test() {
         // Single line comment
         /* Multi 
          * line
